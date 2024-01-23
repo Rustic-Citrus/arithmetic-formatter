@@ -68,3 +68,58 @@ def arithmetic_arranger(problems: list, show_answer: bool = False):
     arranged_problems = "".join(arranged_problems)
 
     return arranged_problems
+
+
+def user_test():
+    def show_answer():
+        user_input_04 = input("Would you like to show the answers? (Y/N) ")
+        try:
+            if user_input_04.upper() == "Y":
+                print(arithmetic_arranger(list_of_equations, True))
+            else:
+                print(arithmetic_arranger(list_of_equations))
+        except Exception as e:
+            print("Error: Some equations were not formatted correctly.")
+
+    goodbye_output = "Thank you for your time."
+
+    user_input_01 = input("Would you like to test the function yourself? (Y/N) ")
+    if user_input_01.upper() == "N":
+        print(goodbye_output)
+    elif user_input_01.upper() == "Y":
+        print("You can type up to 5 equations.")
+        print("The correct format for the equation is as follows,")
+        print("where 'n' represents a number of 4 digits or less:")
+        print("'n1 + n2' or 'n1 - n2'.")
+        print("If you want to type fewer than 5 equations,")
+        print("type 'done'.")
+        done = False
+        list_of_equations = []
+        user_input_02 = input("Type an equation in the correct format: ")
+        while not done:
+            if user_input_02.lower() == "done":
+                if len(list_of_equations) == 0:
+                    print("You didn't type any equations.")
+                    user_input_03 = input("Are you sure you are done? (Y/N) ")
+                    if user_input_03.upper() == "Y":
+                        done = True
+                else:
+                    show_answer()
+                    done = True
+            elif len(list_of_equations) <= 4:
+                list_of_equations.append(user_input_02)
+                print(f"{user_input_02} added to list of equations.")
+                if len(list_of_equations) == 5:
+                    print("You have reached the maximum number of equations.")
+                    show_answer()
+                    done = True
+                else:
+                    user_input_02 = input("Type an equation in the correct format: ")
+            elif len(list_of_equations) >= 5:
+                print("You have reached the maximum number of equations.")
+                show_answer()
+                done = True
+        print(goodbye_output)
+    else:
+        print(f"'{user_input_01}' not recognised as 'Y' or 'N'.")
+        print("Assuming 'No'.")
