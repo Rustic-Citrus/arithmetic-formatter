@@ -1,6 +1,5 @@
 # Arithmetic Formatter
 
-<<<<<<< HEAD
 **Author**: Harry Stuart Curtis
 
 **Published**: 2023-09-23
@@ -48,8 +47,3 @@ The application will automatically run a series of tests provided by freeCodeCam
 ## Thanks
 
 Thank you for showing an interest in my work! Please take the time to see my other projects on [my GitHub profile](https://github.com/Rustic-Citrus) or on [my website](https://www.harryscurtis.com/).
-=======
-This is one of the projects for the Scientific Computing with Python course on freeCodeCamp.
-
-See more at: https://www.freecodecamp.org/learn/scientific-computing-with-python/scientific-computing-with-python-projects/arithmetic-formatter
->>>>>>> 84c95c6b4a7814b1139d7e0644a4f51c99dde6ae
